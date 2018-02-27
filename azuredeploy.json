@@ -207,19 +207,9 @@
             "properties": {
                 "platformUpdateDomainCount": 5,
                 "platformFaultDomainCount": 2,
-                "virtualMachines": [
-                    {
-                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_2_ip_name'))]"
-                    },
-                    {
-                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_ip_name'))]"
-                    }
-                ]
+                "virtualMachines": []
             },
-            "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_2_ip_name'))]",
-                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_ip_name'))]"
-            ]
+            "dependsOn": []
         },
         {
             "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/CC-Gateway-2-ip'.",
