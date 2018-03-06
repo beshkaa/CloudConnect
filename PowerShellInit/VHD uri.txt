@@ -1,0 +1,73 @@
+PS \Documents\PowerShell Lib> $vm=Get-AzureRMVM -ResourceGroupName APhilippov-CloudConnect-Webinar
+
+PS \Documents\PowerShell Lib> $vm.StorageProfile
+
+ImageReference                                           OsDisk                                           DataDisks                                                         
+--------------                                           ------                                           ---------                                                         
+Microsoft.Azure.Management.Compute.Models.ImageReference Microsoft.Azure.Management.Compute.Models.OSDisk {}                                                                
+Microsoft.Azure.Management.Compute.Models.ImageReference Microsoft.Azure.Management.Compute.Models.OSDisk {}                                                                
+Microsoft.Azure.Management.Compute.Models.ImageReference Microsoft.Azure.Management.Compute.Models.OSDisk {}                                                                
+Microsoft.Azure.Management.Compute.Models.ImageReference Microsoft.Azure.Management.Compute.Models.OSDisk {}                                                                
+Microsoft.Azure.Management.Compute.Models.ImageReference Microsoft.Azure.Management.Compute.Models.OSDisk {APhilippov-CloudConnect-BD1-128, APhilippov-CloudConnect-BD2-128}
+
+
+
+PS \Documents\PowerShell Lib> $vm.StorageProfile.OsDisk
+
+
+OsType             : Windows
+EncryptionSettings : 
+Name               : CC-Gateway-2-ip_OsDisk_1_c7d0bb9051f64c25b050436d141c09f7
+Vhd                : 
+Image              : 
+Caching            : ReadWrite
+CreateOption       : FromImage
+DiskSizeGB         : 128
+ManagedDisk        : Microsoft.Azure.Management.Compute.Models.ManagedDiskParameters
+
+OsType             : Windows
+EncryptionSettings : 
+Name               : CC-Gateway-ip_OsDisk_1_4e1c30db13424285a13ec20b4ab668a9
+Vhd                : 
+Image              : 
+Caching            : ReadWrite
+CreateOption       : FromImage
+DiskSizeGB         : 128
+ManagedDisk        : Microsoft.Azure.Management.Compute.Models.ManagedDiskParameters
+
+OsType             : Windows
+EncryptionSettings : 
+Name               : CC-Repository01_OsDisk_1_d98185bfaac24e6f8c4ae59d14d5e984
+Vhd                : 
+Image              : 
+Caching            : ReadWrite
+CreateOption       : FromImage
+DiskSizeGB         : 128
+ManagedDisk        : Microsoft.Azure.Management.Compute.Models.ManagedDiskParameters
+
+OsType             : Windows
+EncryptionSettings : 
+Name               : cc-repository02_OsDisk_1_c33d9dcbbf3f4b6697ece30e9d192452
+Vhd                : 
+Image              : 
+Caching            : ReadWrite
+CreateOption       : FromImage
+DiskSizeGB         : 128
+ManagedDisk        : Microsoft.Azure.Management.Compute.Models.ManagedDiskParameters
+
+OsType             : Windows
+EncryptionSettings : 
+Name               : VCC-MarketPlace_OsDisk_1_c91f337396844287a6db48e482bc8fb1
+Vhd                : 
+Image              : 
+Caching            : ReadWrite
+CreateOption       : FromImage
+DiskSizeGB         : 128
+ManagedDisk        : Microsoft.Azure.Management.Compute.Models.ManagedDiskParameters
+
+
+
+
+PS \Documents\PowerShell Lib> $vm.StorageProfile.OsDisk.Vhd
+
+PS \Documents\PowerShell Lib> 
