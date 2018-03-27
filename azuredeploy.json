@@ -1,78 +1,39 @@
 {
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": { 
-            "siteName": {
-              "type": "string"
-            },
-            "hostingPlanName": {
-              "type": "string"
-            },
-            "siteLocation": {
-              "type": "string"
-            },
-            "sku": {
-              "type": "string",
-              "allowedValues": [
-                "Free",
-                "Shared",
-                "Basic",
-                "Standard"
-              ],
-              "defaultValue": "Free"
-            },
-            "workerSize": {
-              "type": "string",
-              "allowedValues": [
-                "0",
-                "1",
-                "2"
-              ],
-              "defaultValue": "0"
-            },
-            "someAppSetting": {
-              "type": "string",
-              "defaultValue": "Test App Setting Value"
-            },
-            "repoUrl": {
-              "type": "string"
-            },
-            "branch": {
-              "type": "string"
-            }
-     },
-    "variables": { 
-        "CC-Vnet": "[uri(deployment().properties.templateLink.uri, 'Resources/CC-vnet.json')]",
-        "Cc-Vnet-nsg": "[uri(deployment().properties.templateLink.uri, 'Resources/CC-vnet-nsg.json')]"
-     },
-
-     "resources": [ 
-
+    "parameters": {},
+    "variables": {},
+    "resources": [
         {
-            "apiVersion": "2017-05-10",
-            "name": "CC-vnet",
-            "type": "Microsoft.Resources/deployments",
+            "name": "CC-vnet: 10.0.5.0/24 network and subnets",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2017-10-01",
             "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri":"[variables('CC-vnet')]",
-                    "contentVersion":"1.0.0.0"
-                 }
-            }
-        },
-        {
-            "apiVersion": "2017-05-10",
-            "name": "CC-vnet-nsg",
-            "type": "Microsoft.Resources/deployments",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri":"[variables('CC-vnet-nsg')]",
-                    "contentVersion":"1.0.0.0"
-                 }
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.5.0/24"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "CC-vnet-public0",
+                        "properties": {
+                            "addressPrefix": "10.0.5.0/25"
+                        },
+                        "networkSecurityGroup": "CC-vnet-public0-nsg"
+                    },
+                    {
+                        "name": "CC-vnet-backbone0",
+                        "properties": {
+                            "addressPrefix": "10.0.5.128/25"
+                        },
+                        "networkSecurityGroup": "CC-vnet-backbone0-nsg"
+                    }
+                ],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
             }
         }
-
-     ],
-    "outputs": {  }
+    ],
+    "outputs": {}
 }
