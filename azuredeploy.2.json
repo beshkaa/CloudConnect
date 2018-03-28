@@ -1,0 +1,46 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+
+        "someAppSetting": {
+            "type": "string",
+            "defaultValue": "Test App Setting Value"
+          }
+
+    },
+    "variables": {},
+    "resources": [
+        {
+            "name": "CC-vnet",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2017-10-01",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.5.0/24"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "CC-vnet-public0",
+                        "properties": {
+                            "addressPrefix": "10.0.5.0/25"
+                        },
+                        "networkSecurityGroup": "CC-vnet-public0-nsg"
+                    },
+                    {
+                        "name": "CC-vnet-backbone0",
+                        "properties": {
+                            "addressPrefix": "10.0.5.128/25"
+                        },
+                        "networkSecurityGroup": "CC-vnet-backbone0-nsg"
+                    }
+                ],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
+            }
+        }
+    ],
+    "outputs": {}
+}
