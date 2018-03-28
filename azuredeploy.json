@@ -1,53 +1,1741 @@
 {
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-<<<<<<< HEAD
-    "parameters": {  },
-    "variables": {  },
-    "resources": [  ],
-    "outputs": {  }
-=======
     "parameters": {
-
-        "someAppSetting": {
-            "type": "string",
-            "defaultValue": "Test App Setting Value"
-          }
-
+        "virtualMachines_CCAD01_name": {
+            "defaultValue": "CCAD01",
+            "type": "String"
+        },
+        "networkInterfaces_ccad0115_name": {
+            "defaultValue": "ccad0115",
+            "type": "String"
+        },
+        "availabilitySets_CC_Gateways_name": {
+            "defaultValue": "CC-Gateways",
+            "type": "String"
+        },
+        "virtualMachines_CC_Gateway_ip_name": {
+            "defaultValue": "CC-Gateway-ip",
+            "type": "String"
+        },
+        "virtualMachines_CC_Gateway_2_ip_name": {
+            "defaultValue": "CC-Gateway-2-ip",
+            "type": "String"
+        },
+        "virtualMachines_CC_Repository01_name": {
+            "defaultValue": "CC-Repository01",
+            "type": "String"
+        },
+        "virtualMachines_cc_repository02_name": {
+            "defaultValue": "cc-repository02",
+            "type": "String"
+        },
+        "virtualMachines_VCC_MarketPlace_name": {
+            "defaultValue": "VCC-MarketPlace",
+            "type": "String"
+        },
+        "publicIPAddresses_CC_Gateway_ip_name": {
+            "defaultValue": "CC-Gateway-ip",
+            "type": "String"
+        },
+        "publicIPAddresses_CC_Gateway_2_ip_name": {
+            "defaultValue": "CC-Gateway-2-ip",
+            "type": "String"
+        },
+        "loadBalancers_Aphilippov_CC_public_name": {
+            "defaultValue": "Aphilippov-CC-public",
+            "type": "String"
+        },
+        "networkInterfaces_cc_gateway_ip641_name": {
+            "defaultValue": "cc-gateway-ip641",
+            "type": "String"
+        },
+        "networkInterfaces_cc_gateway_ip642_name": {
+            "defaultValue": "cc-gateway-ip642",
+            "type": "String"
+        },
+        "trafficManagerProfiles_cloudgateway_name": {
+            "defaultValue": "cloudgateway",
+            "type": "String"
+        },
+        "networkInterfaces_cc_repository01896_name": {
+            "defaultValue": "cc-repository01896",
+            "type": "String"
+        },
+        "networkInterfaces_cc_repository02771_name": {
+            "defaultValue": "cc-repository02771",
+            "type": "String"
+        },
+        "networkInterfaces_vcc_marketplace962_name": {
+            "defaultValue": "vcc-marketplace962",
+            "type": "String"
+        },
+        "networkSecurityGroups_CC_Gateway_nsg_name": {
+            "defaultValue": "CC-Gateway-nsg",
+            "type": "String"
+        },
+        "publicIPAddresses_VCC_MarketPlace_ip_name": {
+            "defaultValue": "VCC-MarketPlace-ip",
+            "type": "String"
+        },
+        "publicIPAddresses_Aphilippov_CC_public_name": {
+            "defaultValue": "Aphilippov-CC-public",
+            "type": "String"
+        },
+        "storageAccounts_aphilippov0vcc0storage_name": {
+            "defaultValue": "aphilippov0vcc0storage",
+            "type": "String"
+        },
+        "networkSecurityGroups_VCC_MarketPlace_nsg_name": {
+            "defaultValue": "VCC-MarketPlace-nsg",
+            "type": "String"
+        },
+        "virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name": {
+            "defaultValue": "APhilippov-CloudConnect-Webinar-vnet",
+            "type": "String"
+        },
+        "securityRules_Port_6180_name": {
+            "defaultValue": "Port_6180",
+            "type": "String"
+        },
+        "securityRules_CloudConnect_name": {
+            "defaultValue": "CloudConnect",
+            "type": "String"
+        },
+        "extensions_AzureNetworkWatcherExtension_name": {
+            "defaultValue": "AzureNetworkWatcherExtension",
+            "type": "String"
+        },
+        "subnets_CC_subnet_name": {
+            "defaultValue": "CC-subnet",
+            "type": "String"
+        },
+        "securityRules_default_allow_rdp_name": {
+            "defaultValue": "default-allow-rdp",
+            "type": "String"
+        },
+        "inboundNatRules_VCC_Marketplace_3389_443_name": {
+            "defaultValue": "VCC-Marketplace-3389-443",
+            "type": "String"
+        },
+        "virtualMachines_CC_Gateway_2_ip_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/CC-Gateway-2-ip_OsDisk_1_c7d0bb9051f64c25b050436d141c09f7",
+            "type": "String"
+        },
+        "virtualMachines_CC_Gateway_ip_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/CC-Gateway-ip_OsDisk_1_4e1c30db13424285a13ec20b4ab668a9",
+            "type": "String"
+        },
+        "virtualMachines_CC_Repository01_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/CC-Repository01_OsDisk_1_d98185bfaac24e6f8c4ae59d14d5e984",
+            "type": "String"
+        },
+        "virtualMachines_CC_Repository01_id_1": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository01-S2D-disk-0",
+            "type": "String"
+        },
+        "virtualMachines_CC_Repository01_id_2": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository01-S2D-disk-1",
+            "type": "String"
+        },
+        "virtualMachines_CC_Repository01_id_3": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository01-S2D-disk-2",
+            "type": "String"
+        },
+        "virtualMachines_CC_Repository01_id_4": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository01-S2D-disk-3",
+            "type": "String"
+        },
+        "virtualMachines_cc_repository02_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/cc-repository02_OsDisk_1_c33d9dcbbf3f4b6697ece30e9d192452",
+            "type": "String"
+        },
+        "virtualMachines_cc_repository02_id_1": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository02-S2D-disk-0",
+            "type": "String"
+        },
+        "virtualMachines_cc_repository02_id_2": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository02-S2D-disk-1",
+            "type": "String"
+        },
+        "virtualMachines_cc_repository02_id_3": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository02-S2D-disk-2",
+            "type": "String"
+        },
+        "virtualMachines_cc_repository02_id_4": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/cc-repository02-S2D-disk-3",
+            "type": "String"
+        },
+        "virtualMachines_CCAD01_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/CCAD01_OsDisk_1_6fc4a05b3bcc4612a0bdc16f5f048f17",
+            "type": "String"
+        },
+        "virtualMachines_CCAD01_id_1": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/disks/CCAD01-Data-disk-0",
+            "type": "String"
+        },
+        "virtualMachines_VCC_MarketPlace_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/VCC-MarketPlace_OsDisk_1_c91f337396844287a6db48e482bc8fb1",
+            "type": "String"
+        },
+        "virtualMachines_VCC_MarketPlace_id_1": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/APhilippov-CloudConnect-BD1-128",
+            "type": "String"
+        },
+        "virtualMachines_VCC_MarketPlace_id_2": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APHILIPPOV-CLOUDCONNECT-WEBINAR/providers/Microsoft.Compute/disks/APhilippov-CloudConnect-BD2-128",
+            "type": "String"
+        },
+        "loadBalancers_Aphilippov_CC_public_id": {
+            "defaultValue": "/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/loadBalancers/Aphilippov-CC-public/frontendIPConfigurations/LoadBalancerFrontEnd",
+            "type": "String"
+        }
     },
     "variables": {},
     "resources": [
         {
-            "name": "CC-vnet",
-            "type": "Microsoft.Network/virtualNetworks",
-            "apiVersion": "2017-10-01",
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/availabilitySets/CC-Gateways'.",
+            "type": "Microsoft.Compute/availabilitySets",
+            "sku": {
+                "name": "Aligned"
+            },
+            "name": "[parameters('availabilitySets_CC_Gateways_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
             "properties": {
+                "platformUpdateDomainCount": 5,
+                "platformFaultDomainCount": 2,
+                "virtualMachines": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/CC-Gateway-2-ip'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_CC_Gateway_2_ip_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_CC_Gateways_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_B2s"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_CC_Gateway_2_ip_name'),'_OsDisk_1_c7d0bb9051f64c25b050436d141c09f7')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_CC_Gateway_2_ip_id')]"
+                        },
+                        "diskSizeGB": 128
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_CC_Gateway_2_ip_name')]",
+                    "adminUsername": "aphilippov",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_gateway_ip642_name'))]",
+                            "properties": {
+                                "primary": true
+                            }
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('storageAccounts_aphilippov0vcc0storage_name'), '.blob.core.windows.net', '/')]"
+                    }
+                },
+                "licenseType": "Windows_Server"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_CC_Gateways_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_gateway_ip642_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_aphilippov0vcc0storage_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/CC-Gateway-ip'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_CC_Gateway_ip_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_CC_Gateways_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_B2s"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_CC_Gateway_ip_name'),'_OsDisk_1_4e1c30db13424285a13ec20b4ab668a9')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_CC_Gateway_ip_id')]"
+                        },
+                        "diskSizeGB": 128
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_CC_Gateway_ip_name')]",
+                    "adminUsername": "aphilippov",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_gateway_ip641_name'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('storageAccounts_aphilippov0vcc0storage_name'), '.blob.core.windows.net', '/')]"
+                    }
+                },
+                "licenseType": "Windows_Server"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_CC_Gateways_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_gateway_ip641_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_aphilippov0vcc0storage_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/CC-Repository01'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_CC_Repository01_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_B2ms"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_CC_Repository01_name'),'_OsDisk_1_d98185bfaac24e6f8c4ae59d14d5e984')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[parameters('virtualMachines_CC_Repository01_id')]"
+                        }
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtualMachines_CC_Repository01_name'),'cc-repository01-S2D-disk-0')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_CC_Repository01_id_1')]"
+                            }
+                        },
+                        {
+                            "lun": 1,
+                            "name": "[concat(parameters('virtualMachines_CC_Repository01_name'),'cc-repository01-S2D-disk-1')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_CC_Repository01_id_2')]"
+                            }
+                        },
+                        {
+                            "lun": 2,
+                            "name": "[concat(parameters('virtualMachines_CC_Repository01_name'),'cc-repository01-S2D-disk-2')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_CC_Repository01_id_3')]"
+                            }
+                        },
+                        {
+                            "lun": 3,
+                            "name": "[concat(parameters('virtualMachines_CC_Repository01_name'),'cc-repository01-S2D-disk-3')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_CC_Repository01_id_4')]"
+                            }
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_CC_Repository01_name')]",
+                    "adminUsername": "aphilippov",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_repository01896_name'))]",
+                            "properties": {
+                                "primary": true
+                            }
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('storageAccounts_aphilippov0vcc0storage_name'), '.blob.core.windows.net', '/')]"
+                    }
+                },
+                "licenseType": "Windows_Server"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_repository01896_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_aphilippov0vcc0storage_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/cc-repository02'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_cc_repository02_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_B2ms"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_cc_repository02_name'),'_OsDisk_1_c33d9dcbbf3f4b6697ece30e9d192452')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "id": "[parameters('virtualMachines_cc_repository02_id')]"
+                        }
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 1,
+                            "name": "[concat(parameters('virtualMachines_cc_repository02_name'),'-S2D-disk-0')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_cc_repository02_id_1')]"
+                            }
+                        },
+                        {
+                            "lun": 2,
+                            "name": "[concat(parameters('virtualMachines_cc_repository02_name'),'-S2D-disk-1')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_cc_repository02_id_2')]"
+                            }
+                        },
+                        {
+                            "lun": 3,
+                            "name": "[concat(parameters('virtualMachines_cc_repository02_name'),'-S2D-disk-2')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_cc_repository02_id_3')]"
+                            }
+                        },
+                        {
+                            "lun": 4,
+                            "name": "[concat(parameters('virtualMachines_cc_repository02_name'),'-S2D-disk-3')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "id": "[parameters('virtualMachines_cc_repository02_id_4')]"
+                            }
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_cc_repository02_name')]",
+                    "adminUsername": "aphilippov",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_repository02771_name'))]",
+                            "properties": {
+                                "primary": true
+                            }
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('storageAccounts_aphilippov0vcc0storage_name'), '.blob.core.windows.net', '/')]"
+                    }
+                },
+                "licenseType": "Windows_Server"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_cc_repository02771_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_aphilippov0vcc0storage_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/CCAD01'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_CCAD01_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_D1_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter-Server-Core",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_CCAD01_name'),'_OsDisk_1_6fc4a05b3bcc4612a0bdc16f5f048f17')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_CCAD01_id')]"
+                        },
+                        "diskSizeGB": 128
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(parameters('virtualMachines_CCAD01_name'),'-Data-disk-0')]",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_CCAD01_id_1')]"
+                            },
+                            "diskSizeGB": 128
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_CCAD01_name')]",
+                    "adminUsername": "aphilippov",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_ccad0115_name'))]"
+                        }
+                    ]
+                },
+                "licenseType": "Windows_Server"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_ccad0115_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/VCC-MarketPlace'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_VCC_MarketPlace_name')]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "plan": {
+                "name": "veeambackup",
+                "product": "veeamcloudconnect",
+                "publisher": "veeam"
+            },
+            "scale": null,
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_A4_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "veeam",
+                        "offer": "veeamcloudconnect",
+                        "sku": "veeambackup",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "name": "[concat(parameters('virtualMachines_VCC_MarketPlace_name'),'_OsDisk_1_c91f337396844287a6db48e482bc8fb1')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
+                            "id": "[parameters('virtualMachines_VCC_MarketPlace_id')]"
+                        },
+                        "diskSizeGB": 128
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "APhilippov-CloudConnect-BD1-128",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_VCC_MarketPlace_id_1')]"
+                            },
+                            "diskSizeGB": 128
+                        },
+                        {
+                            "lun": 1,
+                            "name": "APhilippov-CloudConnect-BD2-128",
+                            "createOption": "Attach",
+                            "caching": "None",
+                            "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
+                                "id": "[parameters('virtualMachines_VCC_MarketPlace_id_2')]"
+                            },
+                            "diskSizeGB": 128
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_VCC_MarketPlace_name')]",
+                    "adminUsername": "aphilippov",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_vcc_marketplace962_name'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('storageAccounts_aphilippov0vcc0storage_name'), '.blob.core.windows.net', '/')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_vcc_marketplace962_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_aphilippov0vcc0storage_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/loadBalancers/Aphilippov-CC-public'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "Basic"
+            },
+            "name": "[parameters('loadBalancers_Aphilippov_CC_public_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "e95bf22c-955f-4f29-acfb-2def7d4f56c4",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "LoadBalancerFrontEnd",
+                        "etag": "W/\"12fdf63e-edd9-461c-8546-ea23dc6d0a4d\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_Aphilippov_CC_public_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "VCC-MarketPlace",
+                        "etag": "W/\"12fdf63e-edd9-461c-8546-ea23dc6d0a4d\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [],
+                "probes": [],
+                "inboundNatRules": [
+                    {
+                        "name": "VCC-Marketplace-3389-443",
+                        "etag": "W/\"12fdf63e-edd9-461c-8546-ea23dc6d0a4d\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_Aphilippov_CC_public_id')]"
+                            },
+                            "frontendPort": 443,
+                            "backendPort": 3389,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    }
+                ],
+                "outboundNatRules": [],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_Aphilippov_CC_public_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkInterfaces/cc-gateway-ip641'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_cc_gateway_ip641_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "2f1d28fc-21b4-4510-9aea-bddbd96106b9",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"e6d62a6d-e711-4877-9650-97852814fae5\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.5.5",
+                            "privateIPAllocationMethod": "Static",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "hzgkumu5xduezdhdaps4w3jpog.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-2A-53-72",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]"
+                },
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_ip_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_ip_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkInterfaces/cc-gateway-ip642'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_cc_gateway_ip642_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "88cfb835-68b0-414d-a2eb-7f51ecc324b4",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"829165a0-eff6-4406-8de5-a5ce90586c9e\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.5.6",
+                            "privateIPAllocationMethod": "Static",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_2_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "hzgkumu5xduezdhdaps4w3jpog.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-21-41-99",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]"
+                },
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_2_ip_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_2_ip_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_2_ip_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkInterfaces/cc-repository01896'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_cc_repository01896_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "72ee4b4b-d5d7-417e-a5cd-667369b64503",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"bbd702e0-59bd-4ce2-a2c0-a11b74a3dec0\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.5.7",
+                            "privateIPAllocationMethod": "Static",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]"
+                },
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Repository01_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Repository01_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkInterfaces/cc-repository02771'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_cc_repository02771_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "40d23bfa-190c-457b-b9b3-fae4013da773",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"b73093b6-2066-4a09-9121-2046b008cd7a\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.5.8",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]"
+                },
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_cc_repository02_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_cc_repository02_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkInterfaces/ccad0115'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_ccad0115_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "12305620-8f1b-40b4-9b5c-4f1499984d10",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"fb2d7c99-7509-4214-9024-2f3dda905144\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.5.10",
+                            "privateIPAllocationMethod": "Static",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "hzgkumu5xduezdhdaps4w3jpog.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-2D-70-66",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]"
+                },
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CCAD01_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CCAD01_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkInterfaces/vcc-marketplace962'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_vcc_marketplace962_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "5ea54b4f-f5fb-4781-b089-96bd436fd1d9",
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "etag": "W/\"e8cb4a6d-b4e9-4ee9-a1ea-5a69582480a1\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "10.0.5.4",
+                            "privateIPAllocationMethod": "Static",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_Aphilippov_CC_public_name')), '/backendAddressPools/VCC-MarketPlace')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_Aphilippov_CC_public_name'), parameters('inboundNatRules_VCC_Marketplace_3389_443_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "hzgkumu5xduezdhdaps4w3jpog.ax.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-21-5C-2B",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]"
+                },
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_VCC_MarketPlace_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), parameters('subnets_CC_subnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_Aphilippov_CC_public_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_Aphilippov_CC_public_name'), parameters('inboundNatRules_VCC_Marketplace_3389_443_name'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_VCC_MarketPlace_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkSecurityGroups/CC-Gateway-nsg'.",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('networkSecurityGroups_CC_Gateway_nsg_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "1cdc13cb-eb7a-49b4-b045-965b7718d90d",
+                "securityRules": [
+                    {
+                        "name": "Port_6180",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Cloud Connect Gateway",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "6180",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ],
+                "defaultSecurityRules": [
+                    {
+                        "name": "AllowVnetInBound",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowAzureLoadBalancerInBound",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from azure load balancer",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "AzureLoadBalancer",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllInBound",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all inbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowVnetOutBound",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowInternetOutBound",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to Internet",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "Internet",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllOutBound",
+                        "etag": "W/\"a0e3c879-d6cf-4dee-8844-59fda2c1a9ec\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all outbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ]
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkSecurityGroups/VCC-MarketPlace-nsg'.",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "41204c28-e2cd-4cf2-a51c-f8b7c7abe6e6",
+                "securityRules": [
+                    {
+                        "name": "CloudConnect",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "6180",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 1010,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "default-allow-rdp",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 1020,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ],
+                "defaultSecurityRules": [
+                    {
+                        "name": "AllowVnetInBound",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowAzureLoadBalancerInBound",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow inbound traffic from azure load balancer",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "AzureLoadBalancer",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllInBound",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all inbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowVnetOutBound",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "VirtualNetwork",
+                            "destinationAddressPrefix": "VirtualNetwork",
+                            "access": "Allow",
+                            "priority": 65000,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "AllowInternetOutBound",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Allow outbound traffic from all VMs to Internet",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "Internet",
+                            "access": "Allow",
+                            "priority": 65001,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "DenyAllOutBound",
+                        "etag": "W/\"cb42d475-8fd1-4db6-bcfa-6fc0b0b13a6f\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "description": "Deny all outbound traffic",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "*",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Deny",
+                            "priority": 65500,
+                            "direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ]
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/publicIPAddresses/Aphilippov-CC-public'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic"
+            },
+            "name": "[parameters('publicIPAddresses_Aphilippov_CC_public_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "2d240b15-16b6-49d8-ba27-7df4972dd2be",
+                "ipAddress": "13.95.161.185",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/publicIPAddresses/CC-Gateway-2-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic"
+            },
+            "name": "[parameters('publicIPAddresses_CC_Gateway_2_ip_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "287ca00c-6b85-41ff-9157-4d0cc7b95cde",
+                "ipAddress": "52.166.88.221",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "gw2vcc0aphilippov",
+                    "fqdn": "gw2vcc0aphilippov.westeurope.cloudapp.azure.com"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/publicIPAddresses/CC-Gateway-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic"
+            },
+            "name": "[parameters('publicIPAddresses_CC_Gateway_ip_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "591d9513-3067-46f0-a20e-66b8e67b9626",
+                "ipAddress": "52.174.121.139",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "gw1vcc0aphilippov",
+                    "fqdn": "gw1vcc0aphilippov.westeurope.cloudapp.azure.com"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/publicIPAddresses/VCC-MarketPlace-ip'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic"
+            },
+            "name": "[parameters('publicIPAddresses_VCC_MarketPlace_ip_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "12876026-c8f8-4127-bbff-8e600c78cee0",
+                "ipAddress": "52.166.18.118",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/aphilippov-cloudconnect-webinar/providers/Microsoft.Network/trafficManagerProfiles/cloudgateway'.",
+            "type": "Microsoft.Network/trafficManagerProfiles",
+            "name": "[parameters('trafficManagerProfiles_cloudgateway_name')]",
+            "apiVersion": "2017-05-01",
+            "location": "global",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "profileStatus": "Enabled",
+                "trafficRoutingMethod": "Weighted",
+                "dnsConfig": {
+                    "relativeName": "[parameters('trafficManagerProfiles_cloudgateway_name')]",
+                    "fqdn": "[concat(parameters('trafficManagerProfiles_cloudgateway_name'),'.trafficmanager.net')]",
+                    "ttl": 300
+                },
+                "monitorConfig": {
+                    "protocol": "TCP",
+                    "port": 6180,
+                    "path": null,
+                    "intervalInSeconds": 30,
+                    "toleratedNumberOfFailures": 3,
+                    "timeoutInSeconds": 10
+                },
+                "endpoints": [
+                    {
+                        "name": "CC-Gateway-ip",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_ip_name'))]",
+                            "target": "gw1vcc0aphilippov.westeurope.cloudapp.azure.com",
+                            "weight": 1,
+                            "priority": 1,
+                            "endpointLocation": "West Europe"
+                        }
+                    },
+                    {
+                        "name": "CC-Gateway-2-ip",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_2_ip_name'))]",
+                            "target": "gw2vcc0aphilippov.westeurope.cloudapp.azure.com",
+                            "weight": 1,
+                            "priority": 2,
+                            "endpointLocation": "West Europe"
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_ip_name'))]",
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_CC_Gateway_2_ip_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/virtualNetworks/APhilippov-CloudConnect-Webinar-vnet'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "32aa4c3e-b89f-4ce8-8ce3-03e5eb752f76",
                 "addressSpace": {
                     "addressPrefixes": [
-                        "10.0.5.0/24"
+                        "10.0.5.0/24",
+                        "10.0.6.0/24"
+                    ]
+                },
+                "dhcpOptions": {
+                    "dnsServers": [
+                        "10.0.5.10"
                     ]
                 },
                 "subnets": [
                     {
-                        "name": "CC-vnet-public0",
+                        "name": "CC-subnet",
+                        "etag": "W/\"11eee21e-94d3-4a88-86a6-dc4d6f1221e0\"",
                         "properties": {
-                            "addressPrefix": "10.0.5.0/25"
-                        },
-                        "networkSecurityGroup": "CC-vnet-public0-nsg"
-                    },
-                    {
-                        "name": "CC-vnet-backbone0",
-                        "properties": {
-                            "addressPrefix": "10.0.5.128/25"
-                        },
-                        "networkSecurityGroup": "CC-vnet-backbone0-nsg"
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.0.5.0/24",
+                            "serviceEndpoints": []
+                        }
                     }
                 ],
+                "virtualNetworkPeerings": [],
                 "enableDdosProtection": false,
                 "enableVmProtection": false
-            }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Storage/storageAccounts/aphilippov0vcc0storage'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "name": "[parameters('storageAccounts_aphilippov0vcc0storage_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "westeurope",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Compute/virtualMachines/CC-Gateway-ip/extensions/AzureNetworkWatcherExtension'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_CC_Gateway_ip_name'), '/', parameters('extensions_AzureNetworkWatcherExtension_name'))]",
+            "apiVersion": "2017-03-30",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "publisher": "Microsoft.Azure.NetworkWatcher",
+                "type": "NetworkWatcherAgentWindows",
+                "typeHandlerVersion": "1.4",
+                "autoUpgradeMinorVersion": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_CC_Gateway_ip_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/loadBalancers/Aphilippov-CC-public/inboundNatRules/VCC-Marketplace-3389-443'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_Aphilippov_CC_public_name'), '/', parameters('inboundNatRules_VCC_Marketplace_3389_443_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_Aphilippov_CC_public_name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
+                },
+                "frontendPort": 443,
+                "backendPort": 3389,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_Aphilippov_CC_public_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkSecurityGroups/CC-Gateway-nsg/securityRules/Port_6180'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_CC_Gateway_nsg_name'), '/', parameters('securityRules_Port_6180_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "description": "Cloud Connect Gateway",
+                "protocol": "*",
+                "sourcePortRange": "*",
+                "destinationPortRange": "6180",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 100,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_CC_Gateway_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkSecurityGroups/VCC-MarketPlace-nsg/securityRules/CloudConnect'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'), '/', parameters('securityRules_CloudConnect_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "protocol": "TCP",
+                "sourcePortRange": "*",
+                "destinationPortRange": "6180",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 1010,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/networkSecurityGroups/VCC-MarketPlace-nsg/securityRules/default-allow-rdp'.",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "name": "[concat(parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'), '/', parameters('securityRules_default_allow_rdp_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "protocol": "TCP",
+                "sourcePortRange": "*",
+                "destinationPortRange": "3389",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 1020,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_VCC_MarketPlace_nsg_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/2550c090-2cef-47e7-9edc-16b8d01a014d/resourceGroups/APhilippov-CloudConnect-Webinar/providers/Microsoft.Network/virtualNetworks/APhilippov-CloudConnect-Webinar-vnet/subnets/CC-subnet'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'), '/', parameters('subnets_CC_subnet_name'))]",
+            "apiVersion": "2017-10-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.0.5.0/24",
+                "serviceEndpoints": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_APhilippov_CloudConnect_Webinar_vnet_name'))]"
+            ]
         }
-    ],
-    "outputs": {}
->>>>>>> 1f8690e01aab6bfeecaa66f5551a1ad2a4614e22
+    ]
 }
