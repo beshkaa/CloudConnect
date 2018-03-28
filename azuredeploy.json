@@ -4,7 +4,7 @@
     "parameters": {
         "virtualMachines_CCAD01_name": {
             "defaultValue": "CCAD01",
-            "type": "String" }
+            "type": "string" }
     },
     "variables": {},
     "resources": [
@@ -30,12 +30,12 @@
                     },
                     "osDisk": {
                         "osType": "Windows",
-                        "name": "[concat(parameters('virtualMachines_CCAD01_name'),'_OsDisk_1_6fc4a05b3bcc4612a0bdc16f5f048f17')]",
+                        "name": "OsDisk_1_6fc4a05b3bcc4612a0bdc16f5f048f17",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Standard_LRS",
-                            "id": "[parameters('virtualMachines_CCAD01_id')]"
+                            "id": "virtualMachines_CCAD01_id']"
                         },
                         "diskSizeGB": 128
                     },
@@ -46,8 +46,7 @@
                             "createOption": "Attach",
                             "caching": "None",
                             "managedDisk": {
-                                "storageAccountType": "Standard_LRS",
-                                "id": "[parameters('virtualMachines_CCAD01_id_1')]"
+                                "storageAccountType": "Standard_LRS"
                             },
                             "diskSizeGB": 128
                         }
@@ -62,18 +61,8 @@
                     },
                     "secrets": []
                 },
-                "networkProfile": {
-                    "networkInterfaces": [
-                        {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_ccad0115_name'))]"
-                        }
-                    ]
-                },
                 "licenseType": "Windows_Server"
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_ccad0115_name'))]"
-            ]
+            }
         }
         
         
