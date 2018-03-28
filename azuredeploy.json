@@ -6,10 +6,6 @@
             "defaultValue": "CCAD01",
             "type": "String"
         },
-        "networkInterfaces_ccad0115_name": {
-            "defaultValue": "ccad0115",
-            "type": "String"
-        },
         "availabilitySets_CC_Gateways_name": {
             "defaultValue": "CC-Gateways",
             "type": "String"
